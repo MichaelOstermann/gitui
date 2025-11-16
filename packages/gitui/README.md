@@ -6,4 +6,4 @@
 
 </div>
 
-![screenshot](./screenshots/Screenshot.png)
+![screenshot](../../screenshots/Screenshot.png)

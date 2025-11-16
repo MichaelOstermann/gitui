@@ -4,6 +4,10 @@
         "lib": ["DOM", "DOM.Iterable", "ES2023"],
         "module": "ESNext",
         "moduleResolution": "bundler",
+        "paths": {
+            "@monstermann/signals": ["../signals/packages/signals/src/index.ts"],
+            "@monstermann/signals-tui": ["../signals/packages/signals-tui/src/index.ts"]
+        },
         "noEmit": true
     },
     "exclude": [
