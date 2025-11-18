@@ -22,24 +22,37 @@ export async function fetch(): Promise<Status[]> {
                 path,
             }
 
-            const isConflict = "ADUU".includes(idx) && "ADUU".includes(wrk)
-
-            if (isConflict) {
-                const isDeleted = idx === "D" || wrk === "D"
-                const isAdded = idx === "A" || wrk === "A"
-                const isModified = idx === "U" || wrk === "U"
-                result.push({ ...base, isAdded, isConflict: true, isDeleted, isModified })
+            if (idx === "D" && wrk === "D") {
+                result.push({ ...base, isConflict: true, isDeleted: true })
+            }
+            else if (idx === "A" && wrk === "U") {
+                result.push({ ...base, isAdded: true, isConflict: true })
+            }
+            else if (idx === "U" && wrk === "A") {
+                result.push({ ...base, isConflict: true, isDeleted: true })
+            }
+            else if (idx === "D" && wrk === "U") {
+                result.push({ ...base, isConflict: true, isDeleted: true })
+            }
+            else if (idx === "U" && wrk === "D") {
+                result.push({ ...base, isConflict: true, isModified: true })
+            }
+            else if (idx === "A" && wrk === "A") {
+                result.push({ ...base, isAdded: true, isConflict: true })
+            }
+            else if (idx === "U" && wrk === "U") {
+                result.push({ ...base, isConflict: true, isModified: true })
             }
             else {
                 if (idx === "D") result.push({ ...base, isDeleted: true, isStaged: true })
-                if (wrk === "D") result.push({ ...base, isDeleted: true, isStaged: false })
+                if (wrk === "D") result.push({ ...base, isDeleted: true })
                 if (idx === "M") result.push({ ...base, isModified: true, isStaged: true })
-                if (wrk === "M") result.push({ ...base, isModified: true, isStaged: false })
+                if (wrk === "M") result.push({ ...base, isModified: true })
                 if (idx === "R") result.push({ ...base, isRenamed: true, isStaged: true })
-                if (wrk === "R") result.push({ ...base, isRenamed: true, isStaged: false })
+                if (wrk === "R") result.push({ ...base, isRenamed: true })
                 if (idx === "A") result.push({ ...base, isAdded: true, isStaged: true })
-                if (wrk === "A") result.push({ ...base, isAdded: true, isStaged: false })
-                if (idx === "?" && wrk === "?") result.push({ ...base, isAdded: true, isStaged: false })
+                if (wrk === "A") result.push({ ...base, isAdded: true })
+                if (idx === "?" && wrk === "?") result.push({ ...base, isAdded: true })
             }
 
             return result

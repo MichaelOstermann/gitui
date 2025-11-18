@@ -97,7 +97,7 @@ export const list = List.create<ListViewItem>({
             else if (status.isModified) line.unshift(text("  ", { fg: "yellow" }))
             else if (status.isDeleted) line.unshift(text("  ", { fg: "red" }))
             else if (status.isRenamed) line.unshift(text("  ", { fg: "cyan" }))
-            if (status.isConflict) Line.mergeStyle(line, { fg: "red" })
+            if (status.isConflict) line = Line.mergeStyle(line, { fg: "red" })
         }
 
         if (isSelected) line = Line.mergeStyle(line, { bg: "black" })
