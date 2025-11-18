@@ -11,7 +11,7 @@ const table = Table.create({
     col: memo(() => Sidebar.list.right() + 2),
     data: memo<Commit[]>(() => Filter.apply(Branches.$commits(), "message")),
     height: Sidebar.list.height,
-    width: memo(() => Term.width() - 100),
+    width: memo(() => Term.width() - 80),
     columns: [
         { name: "ahead-behind", reserved: true },
         { name: "hash", reserved: true },

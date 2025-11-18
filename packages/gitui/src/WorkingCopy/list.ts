@@ -13,7 +13,7 @@ type ListViewItem =
     | { status: Status, type: "Status" }
 
 const iconSize = 3
-const maxWidth = memo(() => Term.width() - 100)
+const maxWidth = memo(() => Term.width() - 80)
 const width = memo(() => WorkingCopy.$all().reduce((acc, status) => {
     return Math.max(acc, Str.width(status.path) + iconSize)
 }, 0))
