@@ -62,7 +62,7 @@ Term.onShortcuts({
         Commandline.set(":git commit --amend")
     },
     "c": () => {
-        Commandline.set(":git commit")
+        Commandline.set(":git commit -m ")
     },
     "f": () => {
         Commandline.set(":git fetch --all")
