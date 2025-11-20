@@ -11,6 +11,7 @@ export async function fetch(): Promise<Status[]> {
             const idx = line[0] as string
             const wrk = line[1] as string
             const path = line.slice(3)
+            const [oldPath, newPath] = path.split(" -> ")
             const result: Status[] = []
             const base: Status = {
                 isAdded: false,
@@ -19,7 +20,9 @@ export async function fetch(): Promise<Status[]> {
                 isModified: false,
                 isRenamed: false,
                 isStaged: false,
-                path,
+                newPath: newPath || path,
+                oldPath: oldPath || path,
+                path: newPath || path,
             }
 
             if (idx === "D" && wrk === "D") {

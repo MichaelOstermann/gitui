@@ -5,5 +5,7 @@ export type Status = {
     isModified: boolean
     isRenamed: boolean
     isStaged: boolean
+    newPath: string
+    oldPath: string
     path: string
 }
