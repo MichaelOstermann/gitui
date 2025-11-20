@@ -22,7 +22,7 @@
       "dependencies": {
         "@henrygd/queue": "^1.1.1",
         "@monstermann/signals": "^0.0.0",
-        "@monstermann/signals-tui": "^0.1.0",
+        "@monstermann/signals-tui": "^0.2.0",
         "fuzzysort": "^3.1.0",
         "tempy": "^3.1.0",
         "yargs-parser": "^22.0.0",
@@ -222,7 +222,7 @@
 
     "@monstermann/signals": ["@monstermann/signals@0.0.0", "", { "dependencies": { "@monstermann/dll": "^0.0.0", "@monstermann/dsp": "^0.2.1", "@monstermann/meta": "^0.1.0" } }, "sha512-gjmuKZ5alJ2dqXlF++T1VBwxn1iGFYphTW66W6nyOBZkBRVu1OiJj43Y8VRWQ9kJVTPfKGHJxsFmhMXBTL49xA=="],
 
-    "@monstermann/signals-tui": ["@monstermann/signals-tui@0.1.0", "", { "dependencies": { "@monstermann/signals": "^0.0.0", "@types/node": "^24.10.1", "get-east-asian-width": "^1.4.0", "p-defer": "^4.0.1", "signal-exit": "^4.1.0", "strip-ansi": "^7.1.2" } }, "sha512-9qwuxL4p0eeO+MyNKkIVIw6GEEIELzTJ36+lUsDYNvvwcfIfIoSvqi+wnYOkUlvWbC+GZzOLvZ27I6B7Lj6FPg=="],
+    "@monstermann/signals-tui": ["@monstermann/signals-tui@0.2.0", "", { "dependencies": { "@monstermann/signals": "^0.0.0", "@types/node": "^24.10.1", "get-east-asian-width": "^1.4.0", "p-defer": "^4.0.1", "signal-exit": "^4.1.0", "strip-ansi": "^7.1.2" } }, "sha512-f1D3ofxof1WFfaHdMuhKdn8fbFBtHy5gGuhGWGE8820Cf9wCFkK8KCHlb0lqjSrocvuYZrQS5WyP00TklHPG+g=="],
 
     "@monstermann/tree-shake-import-namespaces": ["@monstermann/tree-shake-import-namespaces@0.2.0", "", { "dependencies": { "@jridgewell/remapping": "^2.3.4", "@jridgewell/sourcemap-codec": "^1.5.4", "astring": "^1.9.0", "magic-string": "^0.30.17", "oxc-parser": "^0.76.0", "oxc-walker": "^0.3.0", "picocolors": "^1.1.1" } }, "sha512-CFc6Ym0Uf95V5QpvacC2cAzlv6AoO/YQj9BSoiReIqeMUqouBtc7HZpwecMbQcdPyXicwe2b5M+2zwMPWdWYMw=="],
 
