@@ -8,7 +8,7 @@ export async function fetchCommits(branch: Branch): Promise<Commit[]> {
     return result
         .split("\n")
         .map((line) => {
-            const [_, hash, date, author, message] = line.match(/\((.+?)\)\((.+?)\)\((.+?)\)\((.+?)\)/) ?? []
+            const [_, hash, date, author, message] = line.match(/\((.+)\)\((.+)\)\((.+)\)\((.+)\)/) ?? []
             if (!hash || !date || !author || !message) return undefined
             return { author, date, hash, message }
         })

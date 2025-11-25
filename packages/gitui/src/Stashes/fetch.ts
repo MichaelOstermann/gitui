@@ -6,7 +6,7 @@ export async function fetch(): Promise<Stash[]> {
     const stashes = result
         .split("\n")
         .map((line) => {
-            const [_, id, timeago, message] = line.match(/\(stash@\{(.+?)\}\)\((.+?)\)\((.+?)\)/) ?? []
+            const [_, id, timeago, message] = line.match(/\(stash@\{(.+)\}\)\((.+)\)\((.+)\)/) ?? []
             if (!id || !timeago || !message) return undefined
             return { id, message, timeago }
         })
