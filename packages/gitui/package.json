@@ -28,7 +28,7 @@
     "dependencies": {
         "@henrygd/queue": "^1.1.1",
         "@monstermann/signals": "^0.0.0",
-        "@monstermann/signals-tui": "^0.2.0",
+        "@monstermann/signals-tui": "^0.3.0",
         "fuzzysort": "^3.1.0",
         "tempy": "^3.1.0",
         "yargs-parser": "^22.0.0"
