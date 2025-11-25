@@ -15,7 +15,7 @@
     },
     "packages/gitui": {
       "name": "@monstermann/gitui",
-      "version": "0.3.1",
+      "version": "0.3.2",
       "bin": {
         "gitui": "./dist/index.js",
       },
