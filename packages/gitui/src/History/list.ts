@@ -30,22 +30,6 @@ const table = Table.create({
         if (col === "author") return authorName(data.author)
         return data[col]
     },
-    onKeypress(event) {
-        Key.onShortcuts(event, {
-            "<bs>": () => {
-                if (History.isOnCommit()) {
-                    Commandline.set(`:git reset --soft ${History.commit()?.hash}`)
-                    event.stopPropagation()
-                }
-            },
-            "<cr>": () => {
-                if (History.isOnCommit()) {
-                    Commandline.set(`:git checkout ${History.commit()?.hash}`)
-                    event.stopPropagation()
-                }
-            },
-        })
-    },
     renderBodyCell({ col, content, data }) {
         if (col === "ahead-behind") {
             const isAhead = History.$ahead().includes(data.hash)
@@ -68,6 +52,22 @@ export const list = List.create<{ data: Commit, line: Text[] }>({
     lines: table.lines,
     row: table.row,
     width: table.width,
+    onKeypress(event) {
+        Key.onShortcuts(event, {
+            "<bs>": () => {
+                if (History.isOnCommit()) {
+                    Commandline.set(`:git reset --soft ${History.commit()?.hash}`)
+                    event.stopPropagation()
+                }
+            },
+            "<cr>": () => {
+                if (History.isOnCommit()) {
+                    Commandline.set(`:git checkout ${History.commit()?.hash}`)
+                    event.stopPropagation()
+                }
+            },
+        })
+    },
     renderLine({ data, isSelected }) {
         return isSelected
             ? Line.mergeStyle(data.line, { bg: "black" })

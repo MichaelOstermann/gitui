@@ -20,6 +20,20 @@ const table = Table.create({
     getBodyCell({ col, data }) {
         return data[col]
     },
+    renderBodyCell({ col, content }) {
+        if (col === "id") return [text(content, { fg: "magenta" })]
+        if (col === "message") return [text(content)]
+        if (col === "timeago") return [text(content, { fg: "yellow" })]
+        return []
+    },
+})
+
+export const list = List.create<{ data: Stash, line: Text[] }>({
+    col: table.col,
+    height: table.height,
+    lines: table.lines,
+    row: table.row,
+    width: table.width,
     onKeypress(event) {
         Key.onShortcuts(event, {
             "<bs>": () => {
@@ -42,20 +56,6 @@ const table = Table.create({
             },
         })
     },
-    renderBodyCell({ col, content }) {
-        if (col === "id") return [text(content, { fg: "magenta" })]
-        if (col === "message") return [text(content)]
-        if (col === "timeago") return [text(content, { fg: "yellow" })]
-        return []
-    },
-})
-
-export const list = List.create<{ data: Stash, line: Text[] }>({
-    col: table.col,
-    height: table.height,
-    lines: table.lines,
-    row: table.row,
-    width: table.width,
     renderLine({ data, isSelected }) {
         return isSelected
             ? Line.mergeStyle(data.line, { bg: "black" })
