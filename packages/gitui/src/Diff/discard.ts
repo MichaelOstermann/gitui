@@ -17,8 +17,8 @@ export async function discard(diff: DiffHunk | DiffLine, status: Status): Promis
         hunk.content,
         ...hunk.changes.map((l) => {
             if (l === diff || stageHunk) return l.content
-            if (l.type === "addition") return ""
-            if (l.type === "deletion") return ""
+            if (l.type === "addition") return ` ${l.content.slice(1)}`
+            if (l.type === "deletion") return ` ${l.content.slice(1)}`
             return l.content
         }),
     ].filter(l => !!l)
