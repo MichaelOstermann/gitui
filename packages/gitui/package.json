@@ -1,7 +1,7 @@
 {
     "name": "@monstermann/gitui",
     "type": "module",
-    "version": "0.3.2",
+    "version": "0.3.3",
     "description": "Simple TUI for git.",
     "author": "Michael Ostermann <michaelostermann@me.com>",
     "license": "MIT",
