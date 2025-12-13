@@ -40,7 +40,13 @@ Term.onShortcuts({
         else if (Stashes.list.isFocused()) List.focus(Stashes.diff)
     },
     "<s-p>": () => {
-        Commandline.set(":git push -u origin --tags")
+        const upstream = Branches
+            .$local()
+            .find(b => b.name === Branches.$current())
+            ?.upstream
+            .split("/")
+            .join(" ")
+        Commandline.set(`:git push -u ${upstream} --tags`)
     },
     "<tab>": () => {
         if (Commandline.input.isFocused()) Commandline.blur()
