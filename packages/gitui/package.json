@@ -22,8 +22,7 @@
         "dist/index.js"
     ],
     "scripts": {
-        "bundle": "tsdown",
-        "release": "bun publish --access public"
+        "bundle": "tsdown"
     },
     "dependencies": {
         "@henrygd/queue": "^1.1.1",
