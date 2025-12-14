@@ -21,7 +21,7 @@ const width = memo(() => WorkingCopy.$all().reduce((acc, status) => {
 export const list = List.create<ListViewItem>({
     col: memo(() => Sidebar.list.right() + 2),
     height: Sidebar.list.height,
-    width: memo(() => Math.min(width(), maxWidth())),
+    width: memo(() => Math.max(Math.min(width(), maxWidth()), 25)),
     lines: memo(() => {
         const list: ListViewItem[] = []
 
