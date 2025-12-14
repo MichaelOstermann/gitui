@@ -130,7 +130,7 @@ export const list = List.create<ListViewItem>({
             line = Line.fillRight(line, width - iconSize)
             line = Line.truncateRight(line, width - iconSize)
             if (branch.isAhead) line.push(text(" ", { fg: "green" }))
-            else if (branch.isBehind) line.push(text(" ", { fg: "red" }))
+            if (branch.isBehind) line.push(text(" ", { fg: "red" }))
         }
 
         else if (data.type === "RemoteBranch") {
