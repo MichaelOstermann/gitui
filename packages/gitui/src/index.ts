@@ -44,9 +44,8 @@ Term.onShortcuts({
             .$local()
             .find(b => b.name === Branches.$current())
             ?.upstream
-            .split("/")
-            .join(" ")
-        Commandline.set(`:git push -u ${upstream} --tags`)
+            .split("/") ?? []
+        Commandline.set(`:git push -u ${upstream[0]} ${upstream.slice(1).join("/")} --tags`)
     },
     "<tab>": () => {
         if (Commandline.input.isFocused()) Commandline.blur()
